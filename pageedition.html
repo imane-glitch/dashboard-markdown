@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éditeur Markdown</title>
+    <link rel="stylesheet" href="pageedition.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Markdown</h1>
+
+    <!-- Conteneur principal -->
+    <div class="editor-container">
+        <!-- Zone d'édition Markdown -->
+        <div class="editor-column">
+            <h2>Édition</h2>
+            <textarea
+                id="markdown-input"
+                placeholder="Écrivez votre Markdown ici..."
+                rows="20"
+                cols="50"
+            ></textarea>
+        </div>
+
+        <!-- Zone de prévisualisation -->
+        <div class="preview-column">
+            <h2>Prévisualisation</h2>
+            <div id="preview" class="preview"></div>
+        </div>
+    </div>
+
+    <!-- Actions (import/export) -->
+    <div class="actions">
+        <input
+            type="file"
+            id="file-input"
+            accept=".md"
+            style="display: none;"
+        />
+        <label for="file-input" class="action-button">
+            Importer Markdown
+        </label>
+        <button id="export-button" class="action-button">
+            Exporter Markdown
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="pageedition.js"></script>
+</body>
+</html>
